@@ -12,8 +12,8 @@ export default function Login() {
 
     const dispatch=useDispatch()
     const router =useRouter()
- const {isLoding}= useSelector((store:state)=>store.authReducer)
-   async function login (values:{email:string ,password:string}){
+    const {isLoding}= useSelector((store:state)=>store.authReducer)
+  async function login (values:{email:string ,password:string}){
 
 
     dispatch(setLoding())

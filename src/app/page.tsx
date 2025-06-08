@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
-import styles from "./page.module.css";
+
 import { useRouter } from "next/navigation";
 import Loading from "./loading";
 import { useDispatch, useSelector } from "react-redux";

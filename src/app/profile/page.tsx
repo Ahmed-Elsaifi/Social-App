@@ -15,8 +15,12 @@ export default function Profile() {
   const {isLoading,posts}=  useSelector((store:state)=>store.postReducer)
   const dispatch= useDispatch<postsStore>()
   const x =jwtDecode(`${localStorage.getItem('token')}`)
+  console.log(x,'xxxxxxxx');
+  
   useEffect(()=>{
-    dispatch(getUserPosts(x.user))
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    dispatch(getUserPosts((x as any).user)); // ⚠️ غير آمن، لكن سريع
+    // dispatch(getUserPosts(x.user))
   },[])
 
   return <>

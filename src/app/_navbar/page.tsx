@@ -137,6 +137,7 @@ function Navbar() {
           >
             {token?<Link href={'/'} >Social</Link>:'Social'}
           </Typography>
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {token&&<Box sx={{display: { xs: 'none', md: 'flex' }}} >
             

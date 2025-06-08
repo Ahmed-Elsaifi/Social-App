@@ -7,6 +7,7 @@ const initialState ={
     isLoading:false as boolean ,
     posts:[] as Post[],
     post:null as Post |null,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     error:null as any
 
 } 

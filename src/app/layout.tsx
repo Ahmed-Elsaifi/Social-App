@@ -1,5 +1,5 @@
 'use client'
-import type { Metadata } from "next";
+// import { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
@@ -31,12 +31,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+    
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
        <Provider store={store}>
        
           <AppRouterCacheProvider>
         <Navbar/>
-            <Container maxWidth='sm' sx={{mt:10}} >
+            <Container maxWidth='sm' sx={{mt:7}} >
           {children}
           <Toaster/>
           </Container>

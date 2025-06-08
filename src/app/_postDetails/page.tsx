@@ -3,7 +3,7 @@
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
+
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
@@ -27,6 +27,7 @@ interface ExpandMoreProps extends IconButtonProps {
 }
 
 const ExpandMore = styled((props: ExpandMoreProps) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { expand, ...other } = props;
   return <IconButton {...other} />;
 })(({ theme }) => ({

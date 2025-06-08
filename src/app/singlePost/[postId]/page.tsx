@@ -1,7 +1,7 @@
 'use client'
 import PostDetails from "@/app/_postDetails/page"
 import { getPost } from "@/app/_redux/postsSlice"
-import { postsStore, state, store } from "@/app/_redux/store"
+import { postsStore, state } from "@/app/_redux/store"
 import Loading from "@/app/loading"
 import { useParams } from "next/navigation"
 import { useEffect } from "react"
