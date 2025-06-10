@@ -36,6 +36,7 @@ export default function RootLayout({
        <Provider store={store}>
        
           <AppRouterCacheProvider>
+            
         <Navbar/>
             <Container maxWidth='sm' sx={{mt:7}} >
           {children}

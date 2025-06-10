@@ -21,6 +21,8 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import CommentIcon from '@mui/icons-material/Comment';
 import Link from 'next/link';
 import { Button, TextField } from '@mui/material';
+import Cooke from 'js-cookie'
+
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -70,7 +72,7 @@ export default function PostDetails({post,isComment=false}:{post:Post, isComment
       method:'POST',
       body:JSON.stringify(values),
       headers:{
-        'token':`${localStorage.getItem('token')}`,
+        token:Cooke.get('token')||'',
         'Content-type':'application/json'
       }
     })

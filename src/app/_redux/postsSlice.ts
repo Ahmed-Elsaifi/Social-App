@@ -1,7 +1,7 @@
-'use client'
+
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { Post } from "../interfaces"
-
+import Cooke from 'js-cookie'
 const initialState ={
     
     isLoading:false as boolean ,
@@ -18,7 +18,7 @@ export    const getPosts=createAsyncThunk('posts/getPosts', async ()=>{
         {
           method:'GET',
           headers:{
-            'token':`${localStorage.getItem('token')}`,
+            token:Cooke.get('token')||'',
             'Content-type':'application/json'
           }
         }
@@ -35,7 +35,7 @@ export    const getUserPosts=createAsyncThunk('posts/getUserPosts', async (userI
         {
           method:'GET',
           headers:{
-            'token':`${localStorage.getItem('token')}`,
+            token:Cooke.get('token')||'',
             'Content-type':'application/json'
           }
         }
@@ -52,7 +52,7 @@ export    const getPost=createAsyncThunk('posts/getPost', async (postId:string )
         {
           method:'GET',
           headers:{
-            'token':`${localStorage.getItem('token')}`,
+            token:Cooke.get('token')||'',
             'Content-type':'application/json'
           }
         }

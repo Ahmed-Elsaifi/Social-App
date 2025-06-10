@@ -3,8 +3,9 @@ import { Button, CircularProgress, Paper, TextField } from "@mui/material";
 import {useFormik} from 'formik'
 import { useDispatch, useSelector } from "react-redux";
 import { state } from "../_redux/store";
-import { setError, setLoding, setToken } from "../_redux/auhtSlice";
+import { setError, setLoding, setToken} from "../_redux/auhtSlice";
 import { useRouter } from "next/navigation";
+import Cooke from 'js-cookie'
 
 
 
@@ -27,15 +28,18 @@ export default function Login() {
       }
     })
     const data =await response.json()
+    console.log(data,'datatatatata');
+    
     if (response.ok) {
-      router.push('/')
-
+      
+      Cooke.set('token',data.token)
       dispatch(setToken(data))
+      router.push('/')
     
     }else{
       dispatch(setError(data.error))
     }
-    console.log(data);
+
     
     
    } 

@@ -22,7 +22,7 @@ function Navbar() {
 
 
 
-  const {token} = useSelector((store:state)=>store.authReducer)
+  const token = useSelector((store:state)=>store.authReducer.token)
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 

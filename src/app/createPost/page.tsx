@@ -5,6 +5,7 @@ import { Button,  Paper, TextField } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
 import toast from "react-hot-toast";
+import Cooke from 'js-cookie'
 
 
 
@@ -27,7 +28,7 @@ export default function CreatePost() {
       method:'POST',
       body:formData,
       headers:{
-        'token':`${localStorage.getItem('token')}`
+        'token':Cooke.get('token')||'',
       }
     })
     const data= await response.json()

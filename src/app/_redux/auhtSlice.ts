@@ -2,9 +2,11 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
+import Cooke from 'js-cookie'
 
 
-const initialState ={token: localStorage.getItem('token') as null|string ,isLoding:false as boolean ,error:null as null|string }
+const  initialState = { token: Cooke.get('token') as string |undefined, isLoding: false as boolean, error: null as null | string };
+
 
 
 const authSlice =createSlice({
@@ -16,9 +18,9 @@ const authSlice =createSlice({
 
     },
     setToken:(state,action)=>{
-      state.isLoding=false
-      state.token=action.payload.token
-      localStorage.setItem('token',action.payload.token)
+      state.isLoding=false;
+      state.token=action.payload.token;
+      // Cooke.set('token',action.payload.token);
       toast.success(action.payload.message)
 
     },
@@ -29,8 +31,8 @@ const authSlice =createSlice({
 
     },
     removeToken:(state)=>{
-      state.token=null
-      localStorage.removeItem('token')
+      state.token=undefined
+      Cooke.remove('token')
 
     }
   }

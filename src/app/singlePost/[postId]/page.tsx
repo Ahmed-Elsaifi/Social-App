@@ -16,6 +16,7 @@ export default function SinglePage() {
 
  useEffect(()=>{
   dispatch(getPost(`${postId}`))
+ // eslint-disable-next-line react-hooks/exhaustive-deps
  },[])
 
 
