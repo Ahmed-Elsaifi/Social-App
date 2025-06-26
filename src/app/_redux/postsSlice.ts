@@ -2,6 +2,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { Post } from "../interfaces"
 import Cooke from 'js-cookie'
+
 const initialState ={
     
     isLoading:false as boolean ,
@@ -11,10 +12,12 @@ const initialState ={
     error:null as any
 
 } 
- const token =Cooke.get('token')
- console.log('token',token);
+const token =Cooke.get('token')
  
+
 export    const getPosts=createAsyncThunk('posts/getPosts', async ()=>{
+
+
 
       const response= await fetch(`https://linked-posts.routemisr.com/posts?limit=50`,
         {

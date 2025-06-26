@@ -14,7 +14,7 @@ const authSlice =createSlice({
   initialState,
   reducers:{
     setLoding:(state)=>{
-      state.isLoding=true
+      state.isLoding=false
 
     },
     setToken:(state,action)=>{
